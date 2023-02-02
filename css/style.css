@@ -55,6 +55,19 @@ body {
     display: flex;
     align-items: center;
     position: relative; }
+  .header__logo {
+    height: 100%;
+    flex: 0 0 10%;
+    display: flex;
+    align-items: center; }
+    .header__logo-big, .header__logo-small {
+      flex: 0 0 25%;
+      height: 100%; }
+    .header__logo-small {
+      transform: translateX(-3.7rem); }
+    .header__logo-text {
+      position: relative;
+      right: 4rem; }
   .header__lines-big {
     width: 7rem;
     height: 4px;
@@ -62,17 +75,29 @@ body {
     position: relative; }
     .header__lines-big_left {
       transform: rotate(-59deg);
-      right: 1.5rem; }
+      top: 5rem;
+      right: 1.6rem; }
     .header__lines-big_bottom {
-      top: 2.8rem; }
+      top: 7.5rem; }
     .header__lines-big_right {
       transform: rotate(63deg);
       left: 1.8rem;
-      bottom: .7rem; }
+      top: 4rem; }
   .header__lines-small {
     width: 5.5rem;
     height: 4px;
-    background-color: var(--color-primary); }
+    background-color: var(--color-primary);
+    position: relative; }
+    .header__lines-small_left {
+      transform: rotate(-59deg);
+      top: 5.5rem;
+      right: 1.2rem; }
+    .header__lines-small_bottom {
+      top: 7.5rem; }
+    .header__lines-small_right {
+      transform: rotate(63deg);
+      left: 1.4rem;
+      top: 4.5rem; }
   .header__nav {
     height: 100%;
     margin-left: auto;
