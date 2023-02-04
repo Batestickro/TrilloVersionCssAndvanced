@@ -21,8 +21,8 @@
     }
 
     &-big, &-small { //Two triangles will make the logo.
-      flex: 0 0 25%;
-      height: 100%; // width and height to 100% to wherever we click the checkbox toggles.
+      flex: 0 0 25%; //Each triangle is 25% wide.
+      height: 100%; //Height to 100% to wherever we click the checkbox toggles.
       position: relative;
       bottom: .8rem;
     }
@@ -86,12 +86,14 @@
 
       &_bottom {
         top: 7.5rem;
+        left: 0;
       }
 
       &_right {
         transform: rotate(63deg);
         left: 1.4rem;
         top: 4.5rem;
+        transition: opacity .5s linear;
       }
     }
   }
@@ -107,7 +109,11 @@
     opacity: 0;
   }
 
-  //Second the big trinagle turns into three lines.
+  &__logo:hover &__lines-small_right {
+    opacity: 0;
+  }
+
+  //Second the big trinagle turns into three horizontal lines.
   &__logo:hover &__lines-big_left {
     transform: rotate(0deg);
     width: 5rem;
@@ -164,5 +170,80 @@
     }
   }
 
+  &__description {
+    display: flex;
+  }
+
+  &__main {
+    flex: 0 0 50%;
+    padding: 10rem 0;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__search {
+
+    &-input {
+      width: 80%;
+      font-family: inherit;
+      font-size: 1.6rem;
+      border: none;
+      padding: 1.1rem 2rem;
+      border-radius: 10rem;
+      box-shadow: var(--shadow-light);
+      transition: all .4s ease-out .2s;
+
+      &:focus {
+        outline: none;
+        width: 90%;
+        background-color: var(--color-bluegrey-light-2);
+      }
+    }
+
+    &-button {
+      position: relative;
+      right: 5rem;
+      border: none;
+      background-color: #fff;
+      transition: all .4s ease-out .2s;
+    }
+
+    &-input:focus + &-button {
+      background-color: var(--color-bluegrey-light-2);
+    }
+
+    &-icon {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      fill: var(--color-grey-dark-3);
+    }
+  }
+
+  &__overview {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+  }
+
+  &__star,
+  &__location-pin {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--color-primary);
+  }
+
+  &__location {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0 .5rem;
+  }
 
 }
