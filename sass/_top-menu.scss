@@ -1,0 +1,135 @@
+.top-menu {
+  font-size: 2rem;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__logo {
+    height: 100%;
+    flex: 0 0 10%;
+    display: flex;
+    align-items: center;
+
+    &-check {
+      opacity: 0;
+    }
+
+    &-big, &-small { //Two triangles will make the logo.
+      flex: 0 0 25%; //Each triangle is 25% wide.
+      height: 100%; //Height to 100% to wherever we click the checkbox toggles.
+      position: relative;
+      bottom: .8rem;
+    }
+
+    &-big {
+      transition: transform .5s linear;
+    }
+
+    &-small {
+      transform: translateX(-4rem);
+      transition: transform .5s linear, opacity .3s linear .25s;
+    }
+
+    &-text {
+      position: relative;
+      right: 4rem;
+      font-size: 2.5rem;
+      transition: right .3s linear .5s;
+    }
+  }
+
+  &__lines {   //Drawn each triangle with lines positioned relative to each logo-container.  
+
+    &-big {
+      width: 7rem;
+      height: 4px;
+      background-color: var(--color-primary);
+      position: relative;
+      transition: top .3s linear .5s, left .3s linear .5s, transform .3s linear .5s, width .25s linear .5s;
+      
+
+      &_left {
+        transform: rotate(-59deg);
+        top: 5rem;
+        left: -1.6rem;
+      }
+
+      &_bottom {
+        top: 7.5rem;
+        left: 0;
+      }
+
+      &_right {
+        transform: rotate(63deg);
+        left: 1.8rem;
+        top: 4rem;
+      }
+    }
+
+    &-small {
+      width: 5.5rem;
+      height: 4px;
+      background-color: var(--color-primary);
+      position: relative;
+
+      &_left {
+        transform: rotate(-59deg);
+        top: 5.5rem;
+        right: 1.2rem;
+      }
+
+      &_bottom {
+        top: 7.5rem;
+        left: 0;
+      }
+
+      &_right {
+        transform: rotate(63deg);
+        left: 1.4rem;
+        top: 4.5rem;
+        transition: opacity .5s linear;
+      }
+    }
+  }
+
+  //logo animation, with differences in delay by order.
+  //First both triangles will merge into one.
+  &__logo:hover &__logo-big {
+    transform: translateX(1.7rem);
+  }
+
+  &__logo:hover &__logo-small {
+    transform: translateX(-5.5rem);
+    opacity: 0;
+  }
+
+  &__logo:hover &__lines-small_right {
+    opacity: 0;
+  }
+
+  //Second the big trinagle turns into three horizontal lines.
+  &__logo:hover &__lines-big_left {
+    transform: rotate(0deg);
+    width: 5rem;
+    left: 1rem;
+  }
+
+  &__logo:hover &__lines-big_bottom {
+    width: 5.5rem;
+    top: 6rem;
+    left: 1rem;
+  }
+
+  &__logo:hover &__lines-big_right {
+    transform: rotate(0deg);
+    width: 5.5rem;
+    top: 3rem;
+    left: 1rem;
+  }
+
+  &__logo:hover &__logo-text {
+    right: 2rem;
+  }
+
+}

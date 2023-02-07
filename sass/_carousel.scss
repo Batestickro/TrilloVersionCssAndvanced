@@ -1,0 +1,113 @@
+.carousel {
+  width: 58rem;
+  height: 37rem;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  display: flex;
+  position: relative;
+  top: 4rem;
+  right: 5rem;
+  clip-path: polygon(7% 6%, 100% 0, 93% 93%, 0% 100%);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+
+    &_3 {
+      background-image: linear-gradient(135deg, 
+                                     rgba(255, 0, 217, 0.2), 
+                                     rgba(143, 9, 123, 0.2)), 
+                                     url(../img/hotel-1.jpg);
+      background-size: cover;
+    transition: all 1s;
+
+      &:hover {
+        background-image: linear-gradient(135deg, 
+                                      transparent,
+                                      transparent), 
+                                      url(../img/hotel-1.jpg);
+        background-size: cover;
+      }
+      
+    }
+
+    &_2 {
+      background-image: linear-gradient(135deg, 
+                                     rgba(85, 255, 0, 0.2), 
+                                     rgba(9, 143, 22, 0.2)), 
+                                     url(../img/hotel-2.jpg);
+      background-size: cover;
+
+      &:hover {
+        background-image: linear-gradient(135deg, 
+                                      transparent,
+                                      transparent), 
+                                      url(../img/hotel-2.jpg);
+        background-size: cover;
+      }
+
+    }
+
+    &_1 {
+      background: linear-gradient(135deg, 
+                                     rgba(0, 255, 255, .2), 
+                                     rgba(9, 143, 143,.5)), 
+                                     url(../img/hotel-3.jpg);
+      background-size: cover;
+
+      &:hover {
+        background-image: linear-gradient(135deg, 
+                                      transparent,
+                                      transparent), 
+                                      url(../img/hotel-3.jpg);
+        background-size: cover;
+      }
+
+    }
+
+  }
+
+  &__caption {
+    width: 24rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    background-color: var(--color-primary-dark);
+    color: #fff;
+    border-bottom: solid 2px;
+    position: relative;
+    top: 37rem;
+    left: 5rem;
+    transition: all .5s;
+  }
+
+  &__item:hover &__caption {
+    top: 31rem;
+  }
+
+  &__nav {
+    position: absolute;
+    right: 11rem;
+    bottom: .5rem;
+  }
+
+
+  &__link {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    background-image: linear-gradient(45deg, transparent, #fff);
+    border: solid #fff 1.5px;
+    border-radius: 50%;
+
+    &:hover {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
