@@ -136,16 +136,68 @@ body {
       height: 2.5rem; }
 
 .container {
-  max-width: 135rem;
+  max-width: 125rem;
   margin: 8rem auto;
   background-color: var(--color-grey-light-1);
   box-shadow: 0 2rem 6rem var(--shadow-dark);
   position: relative;
   min-height: 50rem; }
 
+.detail {
+  margin-top: 10rem;
+  padding: 0 8rem;
+  font-size: 2rem; }
+  .detail__description-paragraph:not(:last-of-type) {
+    margin-bottom: 2rem; }
+  .detail__description-list {
+    text-align: center;
+    list-style-type: none;
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: var(--line);
+    border-bottom: var(--line);
+    display: flex;
+    flex-wrap: wrap; }
+    .detail__description-list > li {
+      flex: 0 0 50%;
+      margin-bottom: .7rem; }
+    .detail__description-list > li::before {
+      content: "";
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      margin-right: .7rem;
+      background-image: url(../img/chevron-thin-right.svg);
+      background-size: cover; }
+      @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+        .detail__description-list > li::before {
+          background-color: var(--color-primary);
+          -webkit-mask-image: url(../img/chevron-thin-right.svg);
+          -webkit-mask-size: cover;
+          mask-image: url(../img/chevron-thin-right.svg);
+          mask-size: cover;
+          background-image: none; } }
+  .detail__description-recommend {
+    font-size: 2rem;
+    color: var(--color-grey-dark-3);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; }
+  .detail__description-friends {
+    display: flex; }
+  .detail__description-photo {
+    box-sizing: content-box;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    border: 3px solid #fff; }
+    .detail__description-photo:not(:last-child) {
+      margin-right: -1.5rem; }
+
 .header {
   padding: 0 8rem;
-  background-color: var(--color-bluegrey-light-1); }
+  background-color: var(--color-bluegrey-light-1);
+  border-bottom: var(--line); }
   .header__main {
     display: flex; }
   .header__description {
