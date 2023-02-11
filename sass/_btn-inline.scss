@@ -9,17 +9,17 @@
   cursor: pointer;
   transition: all .3s ease-in .12s;
 
-  & span {
-    margin-left: 3px;
-    transition: margin .3s ease-in .12s;
-  }
+  // & span {
+  //   margin-left: 3px;
+  //   transition: margin .3s ease-in .12s;
+  // }
 
   &:hover {
     color: var(--color-grey-dark-1);
 
-    span {
-      margin-left: 8px;
-    }
+    // span {
+    //   margin-left: 8px;
+    // }
   }
 
   &:focus {

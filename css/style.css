@@ -49,13 +49,8 @@ body {
   background-color: transparent;
   cursor: pointer;
   transition: all .3s ease-in .12s; }
-  .btn-inline span {
-    margin-left: 3px;
-    transition: margin .3s ease-in .12s; }
   .btn-inline:hover {
     color: var(--color-grey-dark-1); }
-    .btn-inline:hover span {
-      margin-left: 8px; }
   .btn-inline:focus {
     outline: none;
     animation: pulsate 1s infinite; }
@@ -143,56 +138,82 @@ body {
   position: relative;
   min-height: 50rem; }
 
-.detail {
+.content {
   margin-top: 10rem;
   padding: 0 8rem;
   font-size: 2rem; }
-  .detail__description-paragraph:not(:last-of-type) {
-    margin-bottom: 2rem; }
-  .detail__description-list {
-    text-align: center;
-    list-style-type: none;
-    margin: 3rem 0;
-    padding: 3rem 0;
-    border-top: var(--line);
-    border-bottom: var(--line);
-    display: flex;
-    flex-wrap: wrap; }
-    .detail__description-list > li {
-      flex: 0 0 50%;
-      margin-bottom: .7rem; }
-    .detail__description-list > li::before {
-      content: "";
-      display: inline-block;
-      height: 1rem;
-      width: 1rem;
-      margin-right: .7rem;
-      background-image: url(../img/chevron-thin-right.svg);
-      background-size: cover; }
-      @supports (-webkit-mask-image: url()) or (mask-image: url()) {
-        .detail__description-list > li::before {
-          background-color: var(--color-primary);
-          -webkit-mask-image: url(../img/chevron-thin-right.svg);
-          -webkit-mask-size: cover;
-          mask-image: url(../img/chevron-thin-right.svg);
-          mask-size: cover;
-          background-image: none; } }
-  .detail__description-recommend {
-    font-size: 2rem;
-    color: var(--color-grey-dark-3);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center; }
-  .detail__description-friends {
-    display: flex; }
-  .detail__description-photo {
-    box-sizing: content-box;
-    width: 7rem;
-    height: 7rem;
-    border-radius: 50%;
-    border: 3px solid #fff; }
-    .detail__description-photo:not(:last-child) {
-      margin-right: -1.5rem; }
+
+.reviews__title {
+  font-weight: 600;
+  font-size: 2rem; }
+
+.reviews__quotes {
+  margin-top: 2rem;
+  padding: 5rem 0 4rem;
+  border-top: 3px solid;
+  border-bottom: 3px solid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; }
+
+.reviews__square {
+  flex: 0 0 45%; }
+  .reviews__square::before {
+    content: "\201C";
+    position: absolute;
+    bottom: 16rem;
+    font-size: 10rem;
+    font-family: sans-serif; }
+
+.reviews__text {
+  position: relative; }
+
+.reviews__user {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center; }
+
+.reviews__photo {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%; }
+
+.reviews__info {
+  margin: 0 auto 0 2rem; }
+
+.reviews__name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0 0 .4rem; }
+
+.reviews__date {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3); }
+
+.reviews__rating {
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--color-primary); }
+
+.reviews__arrows {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  bottom: 2rem; }
+  .reviews__arrows * {
+    color: var(--color-grey-dark-2);
+    font-size: 5rem;
+    border: none;
+    background-color: inherit;
+    transition: all .5s ease .25s; }
+    .reviews__arrows *:hover {
+      color: var(--color-primary); }
+  .reviews__arrows-left:hover {
+    transform: translateX(-0.5rem) scale(1.2); }
+  .reviews__arrows-right:hover {
+    transform: translateX(0.5rem) scale(1.2); }
 
 .header {
   padding: 0 8rem;
@@ -210,6 +231,55 @@ body {
     letter-spacing: 1px; }
   .header__gallery {
     position: relative; }
+
+.hotel-description {
+  display: flex;
+  justify-content: space-between; }
+  .hotel-description__features {
+    flex: 0 0 55%; }
+  .hotel-description__paragraph:not(:last-of-type) {
+    margin-bottom: 2rem; }
+  .hotel-description__list {
+    text-align: center;
+    list-style-type: none;
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: var(--line);
+    border-bottom: var(--line);
+    display: flex;
+    flex-wrap: wrap; }
+    .hotel-description__list > li {
+      flex: 0 0 50%;
+      margin-bottom: .7rem; }
+    .hotel-description__list > li::before {
+      content: "";
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      margin-right: .7rem;
+      background-image: url(../img/chevron-thin-right.svg);
+      background-size: cover; }
+      @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+        .hotel-description__list > li::before {
+          background-color: var(--color-primary);
+          -webkit-mask-image: url(../img/chevron-thin-right.svg);
+          -webkit-mask-size: cover;
+          mask-image: url(../img/chevron-thin-right.svg);
+          mask-size: cover;
+          background-image: none; } }
+  .hotel-description__recommend {
+    margin: auto 0;
+    color: var(--color-grey-dark-3); }
+  .hotel-description__friends {
+    display: flex; }
+  .hotel-description__photo {
+    box-sizing: content-box;
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    border: 3px solid #fff; }
+    .hotel-description__photo:not(:last-child) {
+      margin-right: -1.5rem; }
 
 .navigation {
   height: 100%;
