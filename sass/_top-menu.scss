@@ -31,19 +31,21 @@
       transition: transform .5s linear, opacity .3s linear .25s;
     }
 
+
     &-text {
-      position: relative;
-      right: 4rem;
-      font-size: 2.5rem;
-      transition: right .3s linear .5s;
+      position: absolute;
+      left: 10rem;
+      font-size: 2.3rem;
+      // transition: right .3s linear .5s;
+
     }
   }
 
-  &__lines {   //Drawn each triangle with lines positioned relative to each logo-container.  
+  &__lines { //Drawn each triangle with lines positioned relative to each logo-container.  
 
     &-big {
       width: 7rem;
-      height: 4px;
+      height: .4rem;
       background-color: var(--color-primary);
       position: relative;
       transition: top .3s linear .5s, left .3s linear .5s, transform .3s linear .5s, width .25s linear .5s;
@@ -53,6 +55,7 @@
         transform: rotate(-59deg);
         top: 5rem;
         left: -1.6rem;
+        transition: opacity .3s .5s, left .3s linear .5s, transform .3s linear .5s, width .25s linear .5s;
       }
 
       &_bottom {
@@ -93,8 +96,13 @@
     }
   }
 
-  //logo animation, with differences in delay by order.
-  //First both triangles will merge into one.
+  // //logo animation, with differences in delay by order.
+  // //First both triangles will merge into one.
+  &__logo *:hover {
+    cursor: pointer;
+  }
+
+
   &__logo:hover &__logo-big {
     transform: translateX(1.7rem);
   }
@@ -112,24 +120,53 @@
   &__logo:hover &__lines-big_left {
     transform: rotate(0deg);
     width: 5rem;
-    left: 1rem;
+    left: 0;
   }
 
   &__logo:hover &__lines-big_bottom {
     width: 5.5rem;
     top: 6rem;
-    left: 1rem;
+    left: 0;
   }
 
   &__logo:hover &__lines-big_right {
     transform: rotate(0deg);
     width: 5.5rem;
     top: 3rem;
-    left: 1rem;
+    left: 0;
   }
 
-  &__logo:hover &__logo-text {
-    right: 2rem;
+  &__logo-check:checked ~ &__logo-big {
+    transform: translateX(1.7rem);
+  }
+
+  &__logo-check:checked ~ &__logo-small {
+    transform: translateX(-5.5rem);
+    opacity: 0;
+  }
+
+  //Then the big triangle turns into an X icon
+  &__logo-check:checked ~ &__logo-small &__lines-small_right {
+    opacity: 0;
+  }
+
+  &__logo-check:checked ~ &__logo-big &__lines-big_left {
+    opacity: 0;
+  }
+
+  &__logo-check:checked ~ &__logo-big &__lines-big_bottom {
+    width: 5rem;
+    top: 4.25rem;
+    left: 0;
+    transform: rotate(-138deg);
+  }
+
+  &__logo-check:checked ~ &__logo-big &__lines-big_right {
+    transform: rotate(140deg);
+    width: 5rem;
+    top: 3.8rem;
+    left: 0;
   }
 
 }
+

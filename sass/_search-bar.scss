@@ -14,6 +14,7 @@
       outline: none;
       width: 90%;
       background-color: var(--color-bluegrey-light-2);
+      border-radius: 2rem 2rem 0 0;
     }
   }
 
@@ -35,4 +36,30 @@
     height: 2rem;
     fill: var(--color-grey-dark-3);
   }
+  
+  &__suggestion {
+    font-size: 1.5rem;
+    background-color: var(--color-bluegrey-light-2);
+    border-radius: 0 0 2rem 2rem;
+
+    //Properties to create a smooth dropdown.
+    width: 0; //Initially the menu won't have space in the page.
+    overflow: hidden;//The content will overflow, we can clip it out with overflow set to hidden.
+    opacity: 0; //Overflow property can not be animated so we set opacity to change it smoothly in the transition.
+    position: absolute;
+    // position properties can be animated.
+    // the width propertie will have effect inmidiately but we won't see it
+    // we just will see the menu appearing smoothly.
+    transition: opacity .4s ease-out .4s;
+    z-index: 2;
+  }
+
+  &__input:focus ~ &__suggestion {
+    width: 90%; // width property can be animated.
+    opacity: 1;
+  }
+
+  &__list > li:hover {
+  background-color: #fff; 
+  } 
 }
