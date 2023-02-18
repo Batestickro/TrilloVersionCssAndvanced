@@ -168,5 +168,10 @@
     left: 0;
   }
 
+  &__logo-check:checked ~ .dropdown_logo {
+    width: 25rem;
+    opacity: 1;
+  }
+
 }
 

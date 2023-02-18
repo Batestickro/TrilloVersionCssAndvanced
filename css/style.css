@@ -185,13 +185,22 @@ body {
       animation: pulsate 1s infinite; }
 
 .dropdown {
-  background-color: #fff;
-  width: 25rem;
   position: absolute;
-  top: 7rem;
-  right: 0rem;
-  display: none;
   z-index: 2; }
+  .dropdown_logo {
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    background-color: var(--color-grey-dark-1);
+    top: 8rem;
+    left: 0;
+    transition: opacity .4s ease-out .4s; }
+  .dropdown_user, .dropdown_messages {
+    display: none;
+    width: 25rem;
+    background-color: #fff;
+    top: 7rem;
+    right: 0rem; }
   .dropdown__nav {
     font-size: 1.7rem;
     list-style-type: none; }
@@ -209,20 +218,52 @@ body {
   .dropdown__item {
     padding: 1.5rem 2rem;
     list-style-type: none;
-    border-bottom: 1px solid; }
-  .dropdown__item:hover, .dropdown__message:hover {
+    border-bottom: 1px solid;
+    position: relative; }
+  .dropdown__item_logo::before {
+    content: "";
+    display: inline-block;
+    width: .3rem;
+    height: 100%;
+    background-color: var(--color-primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleY(0);
+    transition: transform 0.3s ease-out 0.25s, width 0.5s cubic-bezier(1, 0, 0, 1) 0.5s; }
+  .dropdown__item_logo:hover::before, .dropdown__item_logo-active:before {
+    transform: scaleY(1);
+    width: 100%; }
+  .dropdown__item_logo:active::before {
+    background-color: var(--color-primary-light); }
+  .dropdown__item_user:hover, .dropdown__message:hover {
     background-color: var(--color-grey-light-2); }
   .dropdown__link:link, .dropdown__link:visited {
-    color: var(--color-grey-dark-3);
     text-decoration: none; }
+  .dropdown__link_logo:link, .dropdown__link_logo:visited {
+    color: var(--color-bluegrey-light-1);
+    position: relative;
+    z-index: 1; }
+  .dropdown__link_user:link, .dropdown__link_user:visited {
+    color: var(--color-grey-dark-3); }
   .dropdown__icon {
     width: 1.75rem;
     height: 1.75rem;
     margin: 0 1.5rem 0 0;
     fill: var(--color-primary); }
+  .dropdown__icon_logo {
+    fill: var(--color-bluegrey-light-1); }
 
 .navigation-user:hover .dropdown, .navigation-box_messages:hover .dropdown {
   display: block; }
+
+.footer {
+  font-size: 1.5rem;
+  background-color: var(--color-bluegrey-light-2);
+  height: 13rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .header {
   padding: 0 8rem;
@@ -553,3 +594,6 @@ body {
     width: 5rem;
     top: 3.8rem;
     left: 0; }
+  .top-menu__logo-check:checked ~ .dropdown_logo {
+    width: 25rem;
+    opacity: 1; }
