@@ -15,6 +15,10 @@
     justify-content: space-between;
     position: relative;
 
+    @media only screen and (max-width: $bp-450px) {
+      display: block;
+    }
+
   }
 
   &__square {
@@ -26,6 +30,14 @@
       bottom: 16rem;
       font-size: 10rem;
       font-family: sans-serif;
+
+      @media only screen and (max-width: $bp-800px) {
+        bottom: 18rem;
+      }
+
+      @media only screen and (max-width: $bp-450px) {
+        display: none;
+      }
     }
     // @media only screen and (max-width: $bp-medium) {
     //   padding: 2rem;

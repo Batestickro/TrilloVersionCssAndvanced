@@ -5,11 +5,20 @@
   align-items: center;
   position: relative;
 
+  @media only screen and (max-width: $bp-450px){
+    height: 16rem;
+    flex-direction: column-reverse;
+  }
+
   &__logo {
     height: 100%;
     flex: 0 0 10%;
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: $bp-450px){
+      flex: 0 1 auto;
+    }
 
     &-check {
       opacity: 0;
@@ -24,11 +33,19 @@
 
     &-big {
       transition: transform .5s linear;
+
+      @media only screen and (max-width: $bp-655px) {
+        transform: translateX(1.7rem);
+      }
     }
 
     &-small {
       transform: translateX(-4rem);
       transition: transform .5s linear, opacity .3s linear .25s;
+
+      @media only screen and (max-width: $bp-655px) {
+        display: none;
+      }
     }
 
 
@@ -36,7 +53,11 @@
       position: absolute;
       left: 10rem;
       font-size: 2.3rem;
-      // transition: right .3s linear .5s;
+
+      @media only screen and (max-width: $bp-450px) {
+        position: relative;
+        left: 3rem;
+      }
 
     }
   }
@@ -56,17 +77,36 @@
         top: 5rem;
         left: -1.6rem;
         transition: opacity .3s .5s, left .3s linear .5s, transform .3s linear .5s, width .25s linear .5s;
+
+        @media only screen and (max-width: $bp-655px) {
+          transform: rotate(0deg);
+          width: 5rem;
+          left: 0;
+        }
       }
 
       &_bottom {
         top: 7.5rem;
         left: 0;
+
+        @media only screen and (max-width: $bp-655px) {
+          width: 5.5rem;
+          top: 6rem;
+          left: 0;
+        }
       }
 
       &_right {
         transform: rotate(63deg);
         left: 1.8rem;
         top: 4rem;
+
+        @media only screen and (max-width: $bp-655px) {
+          transform: rotate(0deg);
+          width: 5.5rem;
+          top: 3rem;
+          left: 0;
+        }
       }
     }
 
@@ -85,6 +125,11 @@
       &_bottom {
         top: 7.5rem;
         left: 0;
+
+
+        @media only screen and (max-width: $bp-1075px){
+          top: 7.3rem;
+        }
       }
 
       &_right {

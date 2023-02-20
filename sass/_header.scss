@@ -3,15 +3,33 @@
   background-color: var(--color-bluegrey-light-1);
   border-bottom: var(--line);
 
+  @media only screen and (max-width: $bp-860px) {
+    padding: 0;
+  }
 
   &__main {
     display: flex;
+
+    @media only screen and (max-width: $bp-930px) {
+      width: 70%;
+      flex-direction: column;
+      margin: 0 auto;
+    }
   }
 
   &__description {
     flex: 0 0 50%;
     padding: 10rem 0;
     position: relative;
+
+    @media only screen and (max-width: $bp-930px){
+      padding: 5rem 0;
+      min-width: 68rem;
+    }
+
+    @media only screen and (max-width: $bp-450px){
+      min-width: 55rem;
+    }
   }
 
   &__title {
@@ -23,6 +41,11 @@
 
   &__gallery {
     position: relative;
+
+    @media only screen and (max-width: $bp-930px){
+      height: 28rem;
+      min-width: 68rem;
+    }
   }
 
 }

@@ -11,6 +11,11 @@
     left: 0;
     transition: opacity .4s ease-out .4s;
 
+    @media only screen and (max-width: $bp-450px) {
+      top: 15rem;
+      left: 25rem;
+    }
+
   }
 
   &_user, &_messages {
@@ -19,6 +24,18 @@
     background-color: #fff;
     top: 7rem;
     right: 0rem;
+
+    @media only screen and (max-width: $bp-450px) {
+      top: 8rem;
+      right: 9rem;
+    }
+  }
+
+  &_messages {
+    @media only screen and (max-width: $bp-450px) {
+      top: 8rem;
+      right: 18rem;
+    }
   }
 
   &__nav {

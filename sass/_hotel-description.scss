@@ -2,6 +2,10 @@
   display: flex;
   justify-content: space-between;
 
+  @media only screen and (max-width: 59.4em) {
+    flex-direction: column-reverse;
+  }
+
 
   &__features {
 
@@ -53,6 +57,10 @@
   &__recommend {
     margin: auto 0;
     color: var(--color-grey-dark-3);
+
+    @media only screen and (max-width: 59.4em) {
+      margin: 0 0 5rem auto;
+    }
   }
 
   &__friends {

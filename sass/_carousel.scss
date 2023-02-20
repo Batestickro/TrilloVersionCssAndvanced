@@ -15,6 +15,24 @@
     display: none;
   }
 
+  @media only screen and (max-width: 73.4em){
+    width: 52rem;
+  }
+
+  @media only screen and (max-width: 67.2em){
+    width: 58rem;
+  }
+
+  @media only screen and (max-width: $bp-930px) {
+    top: -4rem;
+    right: 0;
+  }
+
+  @media only screen and (max-width: $bp-450px) {
+    top: -4rem;
+    right: 8rem;
+  }
+
   &__item {
     flex: 0 0 100%;
     scroll-snap-align: start;
@@ -92,8 +110,17 @@
 
   &__nav {
     position: absolute;
-    right: 11rem;
+    right: 12rem;
     bottom: .5rem;
+
+    @media only screen and (max-width: $bp-930px) {
+      right: 16rem;
+      bottom: 0;
+    }
+
+    @media only screen and (max-width: $bp-450px) {
+      right: 26rem;
+    }
   }
 
 
