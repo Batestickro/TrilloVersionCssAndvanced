@@ -241,21 +241,26 @@
         </div>
         <div class="header__gallery">
           <div class="carousel">
-            <figure class="carousel__item carousel__item_1" id="figure-1">
-              <figcaption class="carousel__caption">Breathtaking sunsets</figcaption>
-            </figure>
-            <figure class="carousel__item carousel__item_2" id="figure-2">
-              <figcaption class="carousel__caption">Perfect tan at sun</figcaption>
-            </figure>
-            <figure class="carousel__item carousel__item_3" id="figure-3">
-              <figcaption class="carousel__caption">Nights full of stars</figcaption>
-            </figure>
+              <input id="toggle_1" type="radio" name="controls" class="carousel__input" checked>
+              <input id="toggle_2" type="radio" name="controls" class="carousel__input">
+              <input id="toggle_3" type="radio" name="controls" class="carousel__input">
+              <div class="carousel__dots">
+                <label for="toggle_1" class="carousel__label carousel__label_1"></label>
+                <label for="toggle_2" class="carousel__label carousel__label_2"></label>
+                <label for="toggle_3" class="carousel__label carousel__label_3"></label>
+              </div>
+              <div  class="carousel__images">
+                <figure class="carousel__item carousel__item_1" id="figure-1">
+                  <figcaption class="carousel__caption">Breathtaking sunsets</figcaption>
+                </figure>
+                <figure class="carousel__item carousel__item_2" id="figure-2">
+                  <figcaption class="carousel__caption">Perfect tan at sun</figcaption>
+                </figure>
+                <figure class="carousel__item carousel__item_3" id="figure-3">
+                  <figcaption class="carousel__caption">Nights full of stars</figcaption>
+                </figure>
+              </div>
           </div>
-          <nav class="carousel__nav">
-            <a href="#figure-1" class="carousel__link carousel__link_1">&nbsp;</a>
-            <a href="#figure-2" class="carousel__link carousel__link_2">&nbsp;</a>
-            <a href="#figure-3" class="carousel__link carousel__link_3">&nbsp;</a>
-          </nav>
         </div>
       </div>
     </header>

@@ -81,17 +81,11 @@ body {
 .carousel {
   width: 58rem;
   height: 37rem;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  display: flex;
+  overflow: hidden;
   position: relative;
   top: 4rem;
   right: 5rem;
-  clip-path: polygon(7% 6%, 100% 0, 93% 93%, 0% 100%); }
-  .carousel::-webkit-scrollbar {
-    display: none; }
+  clip-path: polygon(8% 8%, 100% 0, 92% 93%, 0% 100%); }
   @media only screen and (max-width: 73.4em) {
     .carousel {
       width: 52rem; } }
@@ -106,28 +100,55 @@ body {
     .carousel {
       top: -4rem;
       right: 8rem; } }
+  .carousel__images {
+    width: 100%;
+    height: 100%;
+    display: flex; }
   .carousel__item {
     flex: 0 0 100%;
-    scroll-snap-align: start; }
+    position: relative; }
     .carousel__item_3 {
-      background-image: linear-gradient(135deg, rgba(255, 0, 217, 0.2), rgba(143, 9, 123, 0.2)), url(../img/hotel-1.jpg);
-      background-size: cover;
-      transition: all 1s; }
+      background-image: linear-gradient(135deg, rgba(255, 0, 217, 0.2), rgba(143, 9, 123, 0.2)), url(../img/hotel-1-small.jpg);
+      background-size: cover; }
+      @media (min-resolution: 192dpi) and (min-width: 37.5em) {
+        .carousel__item_3 {
+          background-image: linear-gradient(135deg, rgba(255, 0, 217, 0.2), rgba(143, 9, 123, 0.2)), url(../img/hotel-1.jpg);
+          background-size: cover; } }
       .carousel__item_3:hover {
-        background-image: linear-gradient(135deg, transparent, transparent), url(../img/hotel-1.jpg);
+        background-image: linear-gradient(135deg, transparent, transparent), url(../img/hotel-1-small.jpg);
         background-size: cover; }
+        @media (min-resolution: 192dpi) and (min-width: 37.5em) {
+          .carousel__item_3:hover {
+            background-image: linear-gradient(135deg, transparent, transparent), url(../img/hotel-1.jpg);
+            background-size: cover; } }
     .carousel__item_2 {
-      background-image: linear-gradient(135deg, rgba(85, 255, 0, 0.2), rgba(9, 143, 22, 0.2)), url(../img/hotel-2.jpg);
+      background-image: linear-gradient(135deg, rgba(85, 255, 0, 0.2), rgba(9, 143, 22, 0.2)), url(../img/hotel-2-small.jpg);
       background-size: cover; }
+      @media (min-resolution: 192dpi) and (min-width: 37.5em) {
+        .carousel__item_2 {
+          background-image: linear-gradient(135deg, rgba(85, 255, 0, 0.2), rgba(9, 143, 22, 0.2)), url(../img/hotel-2.jpg);
+          background-size: cover; } }
       .carousel__item_2:hover {
-        background-image: linear-gradient(135deg, transparent, transparent), url(../img/hotel-2.jpg);
+        background-image: linear-gradient(135deg, transparent, transparent), url(../img/hotel-2-small.jpg);
         background-size: cover; }
+        @media (min-resolution: 192dpi) and (min-width: 37.5em) {
+          .carousel__item_2:hover {
+            background-image: linear-gradient(135deg, transparent, transparent), url(../img/hotel-2.jpg);
+            background-size: cover; } }
     .carousel__item_1 {
-      background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(9, 143, 143, 0.5)), url(../img/hotel-3.jpg);
+      background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(9, 143, 143, 0.5)), url(../img/hotel-3-small.jpg);
       background-size: cover; }
+      @media (min-resolution: 192dpi) and (min-width: 37.5em) {
+        .carousel__item_1 {
+          background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(9, 143, 143, 0.5)), url(../img/hotel-3.jpg);
+          background-size: cover; } }
       .carousel__item_1:hover {
-        background-image: linear-gradient(135deg, transparent, transparent), url(../img/hotel-3.jpg);
+        background-image: linear-gradient(135deg, transparent, transparent), url(../img/hotel-3-small.jpg);
         background-size: cover; }
+        @media (min-resolution: 192dpi) and (min-width: 37.5em) {
+          .carousel__item_1:hover {
+            background-image: linear-gradient(135deg, transparent, transparent), url(../img/hotel-3.jpg);
+            background-size: cover; } }
   .carousel__caption {
     width: 24rem;
     font-size: 2rem;
@@ -135,33 +156,40 @@ body {
     background-color: var(--color-primary-dark);
     color: #fff;
     border-bottom: solid 2px;
-    position: relative;
-    top: 37rem;
+    position: absolute;
+    bottom: -3rem;
     left: 5rem;
     transition: all .5s; }
   .carousel__item:hover .carousel__caption {
-    top: 31rem; }
-  .carousel__nav {
+    bottom: 2rem; }
+  .carousel__input, .carousel__dots {
     position: absolute;
-    right: 12rem;
-    bottom: .5rem; }
-    @media only screen and (max-width: 58.1em) {
-      .carousel__nav {
-        right: 16rem;
-        bottom: 0; } }
-    @media only screen and (max-width: 28.2em) {
-      .carousel__nav {
-        right: 26rem; } }
-  .carousel__link {
+    right: 6rem;
+    bottom: 3rem;
+    z-index: 1; }
+  .carousel__input {
+    opacity: 0; }
+  .carousel__label {
     display: inline-block;
     width: 2rem;
     height: 2rem;
     background-image: linear-gradient(45deg, transparent, #fff);
+    backdrop-filter: blur(10px);
     border: solid #fff 1.5px;
-    border-radius: 50%; }
-    .carousel__link:hover {
+    border-radius: 50%;
+    cursor: pointer; }
+    .carousel__label:hover {
       width: 2.5rem;
       height: 2.5rem; }
+  #toggle_1:checked ~ .carousel__dots .carousel__label_1,
+  #toggle_2:checked ~ .carousel__dots .carousel__label_2,
+  #toggle_3:checked ~ .carousel__dots .carousel__label_3 {
+    background-image: linear-gradient(45deg, #000, transparent);
+    backdrop-filter: none; }
+  #toggle_2:checked ~ .carousel__images {
+    transform: translate(-58rem); }
+  #toggle_3:checked ~ .carousel__images {
+    transform: translate(-116rem); }
 
 .container {
   max-width: 123rem;
@@ -233,9 +261,12 @@ body {
     overflow: hidden;
     opacity: 0;
     background-color: var(--color-grey-dark-1);
-    top: 8rem;
-    left: 0;
+    top: 7rem;
+    left: -8rem;
     transition: opacity .4s ease-out .4s; }
+    @media only screen and (max-width: 53.9em) {
+      .dropdown_logo {
+        left: 0; } }
     @media only screen and (max-width: 28.2em) {
       .dropdown_logo {
         top: 15rem;
@@ -721,5 +752,9 @@ body {
     top: 3.8rem;
     left: 0; }
   .top-menu__logo-check:checked ~ .dropdown_logo {
-    width: 25rem;
+    width: 27rem;
+    height: 100vh;
     opacity: 1; }
+    @media only screen and (max-width: 28.2em) {
+      .top-menu__logo-check:checked ~ .dropdown_logo {
+        height: auto; } }

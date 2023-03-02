@@ -7,9 +7,13 @@
     overflow: hidden;
     opacity: 0;
     background-color: var(--color-grey-dark-1);
-    top: 8rem;
-    left: 0;
+    top: 7rem;
+    left: -8rem;
     transition: opacity .4s ease-out .4s;
+
+    @media only screen and (max-width: $bp-860px) {
+      left: 0;
+    }
 
     @media only screen and (max-width: $bp-450px) {
       top: 15rem;
